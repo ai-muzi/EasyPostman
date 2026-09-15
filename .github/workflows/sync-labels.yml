@@ -3,10 +3,10 @@ name: Sync Labels
 
 # 触发条件
 on:
-  # 当推送到 main 分支，且 .github/labels.yml 文件发生变化时触发
+  # 当推送到 master 分支，且 .github/labels.yml 文件发生变化时触发
   push:
     branches:
-      - main
+      - master
     paths:
       - '.github/labels.yml'
   # 允许手动触发工作流
@@ -23,14 +23,13 @@ jobs:
     steps:
       # 第一步：检出代码仓库
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       # 第二步：同步标签配置到 GitHub 仓库
       - name: Sync labels
-        uses: EndBug/label-sync@v2
+        uses: EndBug/label-sync@52074158190acb45f3077f9099fea818aa43f97a # v2.3.3
         with:
           # 标签配置文件路径
           config-file: .github/labels.yml
           # 使用 GitHub 提供的访问令牌进行身份验证
           token: ${{ secrets.GITHUB_TOKEN }}
-
