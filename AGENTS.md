@@ -234,7 +234,7 @@ Platform update code must not import app `SettingManager`; use `UpdateSettingsPr
 | `plugin-release.yml` | Plugin tag | Build plugin JARs, validate consistency, publish, update catalog |
 | `codeql-analysis.yml` | Schedule/push | Security analysis |
 | `auto-label.yml` | Issue/PR opened or edited | Auto-apply labels based on title/body keywords |
-| `sync-labels.yml` | Push to main (`.github/labels.yml` changed) or manual | Sync label definitions to the repository |
+| `sync-labels.yml` | Push to master (`.github/labels.json` changed) or manual | Sync label definitions to the repository |
 | `welcome.yml` | Issue/PR opened | Post a welcome comment for first-time contributors |
 
 ---
