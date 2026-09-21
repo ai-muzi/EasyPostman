@@ -60,18 +60,32 @@ public class NetworkLogMessageFormatter {
 
     private static String formatFollowUp(String message) {
         Matcher matcher = FOLLOW_UP.matcher(message);
-        return matcher.matches()
-                ? I18nUtil.getMessage(MessageKeys.NETWORK_LOG_MESSAGE_FOLLOW_UP,
-                matcher.group(1), matcher.group(2), matcher.group(3))
-                : message;
+        if (!matcher.matches()) {
+            return message;
+        }
+        return I18nUtil.getMessage(MessageKeys.NETWORK_LOG_MESSAGE_FOLLOW_UP,
+                formatBoolean(matcher.group(1)), matcher.group(2), formatNone(matcher.group(3)));
     }
 
     private static String formatRetry(String message) {
         Matcher matcher = RETRY.matcher(message);
-        return matcher.matches()
-                ? I18nUtil.getMessage(MessageKeys.NETWORK_LOG_MESSAGE_RETRY,
-                matcher.group(1), matcher.group(2))
-                : message;
+        if (!matcher.matches()) {
+            return message;
+        }
+        return I18nUtil.getMessage(MessageKeys.NETWORK_LOG_MESSAGE_RETRY,
+                formatBoolean(matcher.group(1)), matcher.group(2));
+    }
+
+    private static String formatBoolean(String value) {
+        return Boolean.parseBoolean(value)
+                ? I18nUtil.getMessage(MessageKeys.NETWORK_LOG_VALUE_YES)
+                : I18nUtil.getMessage(MessageKeys.NETWORK_LOG_VALUE_NO);
+    }
+
+    private static String formatNone(String value) {
+        return "none".equals(value)
+                ? I18nUtil.getMessage(MessageKeys.NETWORK_LOG_VALUE_NONE)
+                : value;
     }
 
     private static String formatTlsMessage(String message) {

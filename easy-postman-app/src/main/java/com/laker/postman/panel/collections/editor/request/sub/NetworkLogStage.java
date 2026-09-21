@@ -30,7 +30,7 @@ public enum NetworkLogStage {
     DISPATCHER_QUEUE_START("DispatcherQueueStart", "⏳", ModernColors::getInfo, false),
     DISPATCHER_QUEUE_END("DispatcherQueueEnd", "▶️", ModernColors::getInfo, false),
     RETRY_DECISION("RetryDecision", "🔁", ModernColors::getWarning, false),
-    FOLLOW_UP_DECISION("FollowUpDecision", "↪️", ModernColors::getWarning, false),
+    FOLLOW_UP_DECISION("FollowUpDecision", "↪️", ModernColors::getInfo, false),
     CACHE_HIT("CacheHit", "💾", ModernColors::getSuccess, false),
     CACHE_MISS("CacheMiss", "❌", ModernColors::getInfo, false),
     CACHE_CONDITIONAL_HIT("CacheConditionalHit", "💾", ModernColors::getInfo, false),

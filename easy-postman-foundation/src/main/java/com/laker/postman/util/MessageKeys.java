@@ -383,6 +383,9 @@ public final class MessageKeys {
     public static final String NETWORK_LOG_CONTENT_TRUNCATED = "network_log.content_truncated";
     public static final String NETWORK_LOG_LINES_OMITTED = "network_log.lines_omitted";
     public static final String NETWORK_LOG_PHASE_DURATION = "network_log.phase_duration";
+    public static final String NETWORK_LOG_VALUE_YES = "network_log.value.yes";
+    public static final String NETWORK_LOG_VALUE_NO = "network_log.value.no";
+    public static final String NETWORK_LOG_VALUE_NONE = "network_log.value.none";
 
     public static final String NETWORK_LOG_MESSAGE_SELECTING_PROXY = "network_log.message.selecting_proxy";
     public static final String NETWORK_LOG_MESSAGE_PROXIES = "network_log.message.proxies";

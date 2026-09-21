@@ -35,7 +35,7 @@ public class NetworkLogMessageFormatterTest {
                 NetworkLogEventStage.FOLLOW_UP_DECISION,
                 "Follow-up: false, response: 200, next: none");
 
-        assertEquals(formatted, "后续请求：false，响应码：200，下一个：none");
+        assertEquals(formatted, "是否需要后续请求：否，响应码：200，下一请求：无");
     }
 
     @Test
